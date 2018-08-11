@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1273B20C02B301C19810E17C /* Pods_iOSium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C21674DDF02FA8FF72299C8 /* Pods_iOSium.framework */; };
+		E91A69D8211F19580002FEAA /* WebDriverAgentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69D7211F19580002FEAA /* WebDriverAgentService.swift */; };
+		E91A69DA211F1E040002FEAA /* WebDriverAgentServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69D9211F1E040002FEAA /* WebDriverAgentServiceAdapter.swift */; };
+		E91A69DD211F1F350002FEAA /* RootServiceDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69DC211F1F350002FEAA /* RootServiceDomain.swift */; };
+		E91A69E0211F21400002FEAA /* WebDriverAgentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69DF211F21400002FEAA /* WebDriverAgentStatus.swift */; };
 		E95EE138211DD6ED0022EAE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95EE131211DD6ED0022EAE4 /* AppDelegate.swift */; };
 		E95EE139211DD6ED0022EAE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E95EE133211DD6ED0022EAE4 /* Assets.xcassets */; };
 		E95EE13A211DD6ED0022EAE4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95EE134211DD6ED0022EAE4 /* MainMenu.xib */; };
@@ -14,6 +19,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0948BA9638F728E883808578 /* Pods-iOSium.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSium.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-iOSium/Pods-iOSium.release.xcconfig"; sourceTree = "<group>"; };
+		3BBAA1616A03BB743AB3B904 /* Pods-iOSium.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSium.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-iOSium/Pods-iOSium.debug.xcconfig"; sourceTree = "<group>"; };
+		3C21674DDF02FA8FF72299C8 /* Pods_iOSium.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSium.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E91A69D7211F19580002FEAA /* WebDriverAgentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDriverAgentService.swift; sourceTree = "<group>"; };
+		E91A69D9211F1E040002FEAA /* WebDriverAgentServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDriverAgentServiceAdapter.swift; sourceTree = "<group>"; };
+		E91A69DC211F1F350002FEAA /* RootServiceDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootServiceDomain.swift; sourceTree = "<group>"; };
+		E91A69DF211F21400002FEAA /* WebDriverAgentStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDriverAgentStatus.swift; sourceTree = "<group>"; };
 		E95EE11F211DD61F0022EAE4 /* iOSium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95EE131211DD6ED0022EAE4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E95EE133211DD6ED0022EAE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -27,18 +39,78 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1273B20C02B301C19810E17C /* Pods_iOSium.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29BED23DB211D3CC5F395A15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C21674DDF02FA8FF72299C8 /* Pods_iOSium.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB69A428193802EE231DF3AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BBAA1616A03BB743AB3B904 /* Pods-iOSium.debug.xcconfig */,
+				0948BA9638F728E883808578 /* Pods-iOSium.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E91A69D4211F19430002FEAA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E91A69D7211F19580002FEAA /* WebDriverAgentService.swift */,
+				E91A69D9211F1E040002FEAA /* WebDriverAgentServiceAdapter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E91A69D5211F19430002FEAA /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				E91A69D6211F19430002FEAA /* DeviceConnectionWindow */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
+		E91A69D6211F19430002FEAA /* DeviceConnectionWindow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DeviceConnectionWindow;
+			sourceTree = "<group>";
+		};
+		E91A69DB211F1F150002FEAA /* ServiceDomain */ = {
+			isa = PBXGroup;
+			children = (
+				E91A69DC211F1F350002FEAA /* RootServiceDomain.swift */,
+			);
+			path = ServiceDomain;
+			sourceTree = "<group>";
+		};
+		E91A69DE211F21300002FEAA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E91A69DF211F21400002FEAA /* WebDriverAgentStatus.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		E95EE116211DD61F0022EAE4 = {
 			isa = PBXGroup;
 			children = (
 				E95EE130211DD6ED0022EAE4 /* Classes */,
 				E95EE132211DD6ED0022EAE4 /* Resources */,
 				E95EE120211DD61F0022EAE4 /* Products */,
+				CB69A428193802EE231DF3AA /* Pods */,
+				29BED23DB211D3CC5F395A15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,6 +125,10 @@
 		E95EE130211DD6ED0022EAE4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E91A69DE211F21300002FEAA /* Data */,
+				E91A69DB211F1F150002FEAA /* ServiceDomain */,
+				E91A69D4211F19430002FEAA /* Network */,
+				E91A69D5211F19430002FEAA /* Windows */,
 				E95EE131211DD6ED0022EAE4 /* AppDelegate.swift */,
 			);
 			path = Classes;
@@ -76,9 +152,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E95EE12D211DD6210022EAE4 /* Build configuration list for PBXNativeTarget "iOSium" */;
 			buildPhases = (
+				384C18D1514B32EDF0A4702E /* [CP] Check Pods Manifest.lock */,
 				E95EE11B211DD61F0022EAE4 /* Sources */,
 				E95EE11C211DD61F0022EAE4 /* Frameworks */,
 				E95EE11D211DD61F0022EAE4 /* Resources */,
+				C33D909E9A722AABF0EC74D8 /* [CP] Embed Pods Frameworks */,
+				E324E9010D3D25FDB97980A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,12 +214,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		384C18D1514B32EDF0A4702E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSium-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C33D909E9A722AABF0EC74D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../../Pods/Target Support Files/Pods-iOSium/Pods-iOSium-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../Pods/Target Support Files/Pods-iOSium/Pods-iOSium-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E324E9010D3D25FDB97980A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../Pods/Target Support Files/Pods-iOSium/Pods-iOSium-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E95EE11B211DD61F0022EAE4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91A69DA211F1E040002FEAA /* WebDriverAgentServiceAdapter.swift in Sources */,
+				E91A69D8211F19580002FEAA /* WebDriverAgentService.swift in Sources */,
 				E95EE138211DD6ED0022EAE4 /* AppDelegate.swift in Sources */,
+				E91A69DD211F1F350002FEAA /* RootServiceDomain.swift in Sources */,
+				E91A69E0211F21400002FEAA /* WebDriverAgentStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +412,7 @@
 		};
 		E95EE12E211DD6210022EAE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BBAA1616A03BB743AB3B904 /* Pods-iOSium.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resources/iOSium.entitlements;
@@ -280,10 +420,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8DM7J729SL;
 				INFOPLIST_FILE = Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.iOSium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -292,6 +430,7 @@
 		};
 		E95EE12F211DD6210022EAE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0948BA9638F728E883808578 /* Pods-iOSium.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resources/iOSium.entitlements;
@@ -299,10 +438,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8DM7J729SL;
 				INFOPLIST_FILE = Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.iOSium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

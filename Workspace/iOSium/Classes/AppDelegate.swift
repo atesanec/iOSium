@@ -16,6 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        RootServiceDomain.sharedDomain.webDriverAgentService.start(url: URL(string: "http://192.168.1.72:8100")!)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
