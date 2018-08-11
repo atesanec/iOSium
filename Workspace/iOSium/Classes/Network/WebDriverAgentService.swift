@@ -9,9 +9,26 @@
 import Foundation
 import RxSwift
 
+/**
+ *  Connection status
+ */
 enum WebDriverAgentServiceConnectionStatus {
     case connected
+    case connecting
     case disconnected
+    
+    func displayText() -> String {
+        switch self {
+        case .connected:
+            return "ConnectedState".localized
+            
+        case .connecting:
+            return "ConnectingState".localized
+            
+        case .disconnected:
+            return "DisconnectedState".localized
+        }
+    }
 }
 
 /**
@@ -19,7 +36,7 @@ enum WebDriverAgentServiceConnectionStatus {
  */
 class WebDriverAgentService {
     private(set) var connectionStatus = BehaviorSubject<WebDriverAgentServiceConnectionStatus>(value: .disconnected)
-    private(set) var url: URL?
+    private(set) var url = ApplicationPreferences.serviceURL
     private(set) var sessionId: String?
     
     private let requestAdapter = WebDriverAgentServiceAdapter()
@@ -27,20 +44,29 @@ class WebDriverAgentService {
     
     func start(url: URL) {
         self.stop()
+        self.connectionStatus.onNext(.connecting)
         
         self.url = url
-        Observable<Int>.timer(0, period: 5, scheduler: MainScheduler.instance)
+        ApplicationPreferences.serviceURL = url
+        
+        let interval: Double? = 5.0
+        Observable<Int>.timer(0.0, period: interval, scheduler: MainScheduler.instance)
             .flatMapLatest { [weak self] _ in
-                self!.requestAdapter.checkConnectionStatus().retry()
+                self!.requestAdapter.checkConnectionStatus().retryWhen {[weak self] (o : Observable<Error>) -> Observable<Int> in
+                    self!.connectionStatus.onNext(.connecting)
+                    return Observable<Int>.timer(1, period: nil, scheduler: MainScheduler.instance).flatMap({ elem -> Observable<Int> in
+                       // self!.connectionStatus.onNext(.connecting)
+                        return Observable<Int>.just(elem)
+                    })
+                }
         }.subscribe(onNext: { [weak self] status in
             self!.connectionStatus.onNext(.connected)
             self!.sessionId = status.defaultSessionId
-        }, onError: { [weak self] _ in
-            self!.connectionStatus.onNext(.disconnected)
         }).disposed(by: self.disposeBag)
     }
     
     func stop() {
+        self.connectionStatus.onNext(.disconnected)
         self.sessionId = nil
         self.disposeBag = DisposeBag()
     }

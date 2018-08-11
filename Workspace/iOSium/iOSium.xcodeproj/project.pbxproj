@@ -12,6 +12,16 @@
 		E91A69DA211F1E040002FEAA /* WebDriverAgentServiceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69D9211F1E040002FEAA /* WebDriverAgentServiceAdapter.swift */; };
 		E91A69DD211F1F350002FEAA /* RootServiceDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69DC211F1F350002FEAA /* RootServiceDomain.swift */; };
 		E91A69E0211F21400002FEAA /* WebDriverAgentStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69DF211F21400002FEAA /* WebDriverAgentStatus.swift */; };
+		E91A69E2211F45AB0002FEAA /* DeviceConnectionWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69E1211F45AB0002FEAA /* DeviceConnectionWindowController.swift */; };
+		E91A69E4211F45E20002FEAA /* DeviceConnectionWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91A69E3211F45E20002FEAA /* DeviceConnectionWindowController.xib */; };
+		E91A69E7211F4C540002FEAA /* String+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69E6211F4C540002FEAA /* String+Localizable.swift */; };
+		E91A69E9211F51490002FEAA /* DeviceConnectionWindowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69E8211F51490002FEAA /* DeviceConnectionWindowModel.swift */; };
+		E91A69EB211F5D150002FEAA /* ApplicationPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69EA211F5D150002FEAA /* ApplicationPreferences.swift */; };
+		E91A69EE211F79D30002FEAA /* WebDriverAgentScreenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69ED211F79D30002FEAA /* WebDriverAgentScreenshot.swift */; };
+		E91A69F0211F81110002FEAA /* DeviceInteractionWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69EF211F81110002FEAA /* DeviceInteractionWindowController.swift */; };
+		E91A69F2211F81780002FEAA /* DeviceInteractionWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E91A69F1211F81780002FEAA /* DeviceInteractionWindowController.xib */; };
+		E91A69F4211F82A40002FEAA /* DeviceInteractionWindowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69F3211F82A40002FEAA /* DeviceInteractionWindowModel.swift */; };
+		E91A69F6211F83850002FEAA /* DeviceInteractionActionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91A69F5211F83850002FEAA /* DeviceInteractionActionManager.swift */; };
 		E95EE138211DD6ED0022EAE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95EE131211DD6ED0022EAE4 /* AppDelegate.swift */; };
 		E95EE139211DD6ED0022EAE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E95EE133211DD6ED0022EAE4 /* Assets.xcassets */; };
 		E95EE13A211DD6ED0022EAE4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95EE134211DD6ED0022EAE4 /* MainMenu.xib */; };
@@ -26,6 +36,16 @@
 		E91A69D9211F1E040002FEAA /* WebDriverAgentServiceAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDriverAgentServiceAdapter.swift; sourceTree = "<group>"; };
 		E91A69DC211F1F350002FEAA /* RootServiceDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootServiceDomain.swift; sourceTree = "<group>"; };
 		E91A69DF211F21400002FEAA /* WebDriverAgentStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDriverAgentStatus.swift; sourceTree = "<group>"; };
+		E91A69E1211F45AB0002FEAA /* DeviceConnectionWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConnectionWindowController.swift; sourceTree = "<group>"; };
+		E91A69E3211F45E20002FEAA /* DeviceConnectionWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceConnectionWindowController.xib; sourceTree = "<group>"; };
+		E91A69E6211F4C540002FEAA /* String+Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localizable.swift"; sourceTree = "<group>"; };
+		E91A69E8211F51490002FEAA /* DeviceConnectionWindowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConnectionWindowModel.swift; sourceTree = "<group>"; };
+		E91A69EA211F5D150002FEAA /* ApplicationPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationPreferences.swift; sourceTree = "<group>"; };
+		E91A69ED211F79D30002FEAA /* WebDriverAgentScreenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDriverAgentScreenshot.swift; sourceTree = "<group>"; };
+		E91A69EF211F81110002FEAA /* DeviceInteractionWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInteractionWindowController.swift; sourceTree = "<group>"; };
+		E91A69F1211F81780002FEAA /* DeviceInteractionWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceInteractionWindowController.xib; sourceTree = "<group>"; };
+		E91A69F3211F82A40002FEAA /* DeviceInteractionWindowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInteractionWindowModel.swift; sourceTree = "<group>"; };
+		E91A69F5211F83850002FEAA /* DeviceInteractionActionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInteractionActionManager.swift; sourceTree = "<group>"; };
 		E95EE11F211DD61F0022EAE4 /* iOSium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95EE131211DD6ED0022EAE4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E95EE133211DD6ED0022EAE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +95,7 @@
 		E91A69D5211F19430002FEAA /* Windows */ = {
 			isa = PBXGroup;
 			children = (
+				E91A69EC211F756C0002FEAA /* DeviceInteractionWindow */,
 				E91A69D6211F19430002FEAA /* DeviceConnectionWindow */,
 			);
 			path = Windows;
@@ -83,6 +104,9 @@
 		E91A69D6211F19430002FEAA /* DeviceConnectionWindow */ = {
 			isa = PBXGroup;
 			children = (
+				E91A69E1211F45AB0002FEAA /* DeviceConnectionWindowController.swift */,
+				E91A69E3211F45E20002FEAA /* DeviceConnectionWindowController.xib */,
+				E91A69E8211F51490002FEAA /* DeviceConnectionWindowModel.swift */,
 			);
 			path = DeviceConnectionWindow;
 			sourceTree = "<group>";
@@ -99,8 +123,29 @@
 			isa = PBXGroup;
 			children = (
 				E91A69DF211F21400002FEAA /* WebDriverAgentStatus.swift */,
+				E91A69EA211F5D150002FEAA /* ApplicationPreferences.swift */,
+				E91A69ED211F79D30002FEAA /* WebDriverAgentScreenshot.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		E91A69E5211F4C540002FEAA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E91A69E6211F4C540002FEAA /* String+Localizable.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E91A69EC211F756C0002FEAA /* DeviceInteractionWindow */ = {
+			isa = PBXGroup;
+			children = (
+				E91A69EF211F81110002FEAA /* DeviceInteractionWindowController.swift */,
+				E91A69F1211F81780002FEAA /* DeviceInteractionWindowController.xib */,
+				E91A69F3211F82A40002FEAA /* DeviceInteractionWindowModel.swift */,
+				E91A69F5211F83850002FEAA /* DeviceInteractionActionManager.swift */,
+			);
+			path = DeviceInteractionWindow;
 			sourceTree = "<group>";
 		};
 		E95EE116211DD61F0022EAE4 = {
@@ -125,6 +170,7 @@
 		E95EE130211DD6ED0022EAE4 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E91A69E5211F4C540002FEAA /* Utils */,
 				E91A69DE211F21300002FEAA /* Data */,
 				E91A69DB211F1F150002FEAA /* ServiceDomain */,
 				E91A69D4211F19430002FEAA /* Network */,
@@ -209,6 +255,8 @@
 				E95EE139211DD6ED0022EAE4 /* Assets.xcassets in Resources */,
 				E95EE13A211DD6ED0022EAE4 /* MainMenu.xib in Resources */,
 				E95EE13B211DD6ED0022EAE4 /* Info.plist in Resources */,
+				E91A69F2211F81780002FEAA /* DeviceInteractionWindowController.xib in Resources */,
+				E91A69E4211F45E20002FEAA /* DeviceConnectionWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,11 +289,13 @@
 			inputPaths = (
 				"${SRCROOT}/../../Pods/Target Support Files/Pods-iOSium/Pods-iOSium-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,10 +326,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E91A69DA211F1E040002FEAA /* WebDriverAgentServiceAdapter.swift in Sources */,
+				E91A69F6211F83850002FEAA /* DeviceInteractionActionManager.swift in Sources */,
 				E91A69D8211F19580002FEAA /* WebDriverAgentService.swift in Sources */,
+				E91A69EE211F79D30002FEAA /* WebDriverAgentScreenshot.swift in Sources */,
 				E95EE138211DD6ED0022EAE4 /* AppDelegate.swift in Sources */,
+				E91A69E2211F45AB0002FEAA /* DeviceConnectionWindowController.swift in Sources */,
 				E91A69DD211F1F350002FEAA /* RootServiceDomain.swift in Sources */,
+				E91A69EB211F5D150002FEAA /* ApplicationPreferences.swift in Sources */,
 				E91A69E0211F21400002FEAA /* WebDriverAgentStatus.swift in Sources */,
+				E91A69E7211F4C540002FEAA /* String+Localizable.swift in Sources */,
+				E91A69F0211F81110002FEAA /* DeviceInteractionWindowController.swift in Sources */,
+				E91A69F4211F82A40002FEAA /* DeviceInteractionWindowModel.swift in Sources */,
+				E91A69E9211F51490002FEAA /* DeviceConnectionWindowModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -402,7 +460,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -420,7 +478,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8DM7J729SL;
 				INFOPLIST_FILE = Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.iOSium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -438,7 +499,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 8DM7J729SL;
 				INFOPLIST_FILE = Resources/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.iOSium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
