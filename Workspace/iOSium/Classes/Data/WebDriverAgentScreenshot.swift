@@ -17,6 +17,7 @@ struct WebDriverAgentScreenshot {
         
         var imageBase64 = responseDict["value"] as! String
         imageBase64 = imageBase64.replacingOccurrences(of: "\r\n", with: "")
+        
         self.image = NSImage(data: Data(base64Encoded: imageBase64)!)!
     }
 }

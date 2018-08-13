@@ -13,6 +13,7 @@
                 <outlet property="refreshButton" destination="GTr-Ea-oJP" id="vo6-NQ-ahl"/>
                 <outlet property="startButton" destination="Sox-Fy-6aT" id="end-gZ-RsW"/>
                 <outlet property="statusLabel" destination="3p0-0T-jWz" id="ngS-qk-ezK"/>
+                <outlet property="window" destination="QvC-M9-y7g" id="pqA-RG-sUM"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -91,7 +92,7 @@
                     <constraint firstAttribute="bottom" secondItem="Sox-Fy-6aT" secondAttribute="bottom" constant="20" id="sFE-Ci-Rgt"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="53" y="123.5"/>
+            <point key="canvasLocation" x="-243" y="52"/>
         </window>
     </objects>
 </document>

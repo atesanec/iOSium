@@ -10,18 +10,8 @@ import Foundation
 import RxSwift
 
 class DeviceInteractionWindowModel {
-    static var maxWindowSize: CGFloat {
-        return NSScreen.main!.visibleFrame.height * 0.5
-    }
+    let deviceScreenInfo = BehaviorSubject<DeviceInteractionScreenInfo?>(value: nil)
     
-    let screenshotImage = BehaviorSubject<NSImage?>(value: nil)
-    
-    var targetWindowSize: NSSize {
-        let image = try! self.screenshotImage.value()!
-        let imageSize = image.size
-        let maxSize = DeviceInteractionWindowModel.maxWindowSize
-        let scaleRatio = min(maxSize / imageSize.width, maxSize / imageSize.height)
-        
-        return NSSize(width: imageSize.width * scaleRatio, height: imageSize.height * scaleRatio)
-    }
+    let refreshScreenshotSignal = PublishSubject<Void>()
+    let screenClickSignal = PublishSubject<NSPoint>()
 }

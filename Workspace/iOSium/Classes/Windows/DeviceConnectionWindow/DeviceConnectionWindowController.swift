@@ -60,7 +60,13 @@ class DeviceConnectionWindowController: NSWindowController {
         }).disposed(by: self.disposeBag)
         
         refreshButton.rx.tap.asObservable().subscribe(onNext: { [weak self] in
-            self!.interactionWindowController.refreshScreenshot()
+            let strongSelf = self!
+            
+           // if !strongSelf.interactionWindowController.window!.isVisible {
+                strongSelf.interactionWindowController.showWindow(self)
+           // }
+            
+            strongSelf.interactionWindowController.refreshScreenshot()
         }).disposed(by: self.disposeBag)
     }
     

@@ -12,7 +12,7 @@ import RxCocoa
 import RxSwift
 
 class DeviceInteractionWindowController: NSWindowController {
-    @IBOutlet weak var imageView: NSImageView?
+    @IBOutlet weak var imageViewContainer: DeviceInteractionImageViewContainer!
     
     private let disposeBag = DisposeBag()
     private let windowModel = DeviceInteractionWindowModel()
@@ -20,43 +20,34 @@ class DeviceInteractionWindowController: NSWindowController {
     
     convenience init() {
         self.init(windowNibName: NSNib.Name("DeviceInteractionWindowController"))
+        self.actionManager = DeviceInteractionActionManager(windowModel: self.windowModel)
     }
     
     func refreshScreenshot() {
-        self.actionManager.refreshScreenshot()
+        self.windowModel.refreshScreenshotSignal.onNext(())
     }
     
     override func windowDidLoad() {
         self.actionManager = DeviceInteractionActionManager(windowModel: self.windowModel)
-        self.setupObservations()
+        self.setupModelObservations()
+        self.setupUIObservations()
     }
     
-    private func setupObservations() {
-        self.windowModel.screenshotImage.subscribe(onNext: { [weak self] image in
+    private func setupModelObservations() {
+        self.windowModel.deviceScreenInfo.subscribe(onNext: { [weak self] info in
             let strongSelf = self!
-            strongSelf.updateWindowVisibility()
-            strongSelf.imageView!.image = image
-            strongSelf.window!.setContentSize(strongSelf.windowModel.targetWindowSize)
+            if let screenInfo = info {
+                strongSelf.imageViewContainer!.image = screenInfo.image
+            }
         }).disposed(by: disposeBag);
         
         let agent = RootServiceDomain.sharedDomain.webDriverAgentService
         agent.connectionStatus.subscribe(onNext: { [weak self] status in
-            self!.updateWindowVisibility()
+            self!.imageViewContainer.isHidden = status != .connected
         }).disposed(by: disposeBag)
     }
     
-    private func updateWindowVisibility() {
-        let webDriverAgentStatus = try! RootServiceDomain.sharedDomain.webDriverAgentService.connectionStatus.value()
-        let image = try! self.windowModel.screenshotImage.value()
-        
-        self.hideWindow(hide: webDriverAgentStatus != .connected || image == nil)
-    }
-    
-    private func hideWindow(hide: Bool) {
-        if hide {
-            self.close()
-        } else {
-            self.showWindow(self)
-        }
+    private func setupUIObservations() {
+        self.imageViewContainer.imageViewClick.bind(to: self.windowModel.screenClickSignal).disposed(by: disposeBag)
     }
 }

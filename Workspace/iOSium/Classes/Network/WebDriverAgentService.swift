@@ -53,9 +53,8 @@ class WebDriverAgentService {
         Observable<Int>.timer(0.0, period: interval, scheduler: MainScheduler.instance)
             .flatMapLatest { [weak self] _ in
                 self!.requestAdapter.checkConnectionStatus().retryWhen {[weak self] (o : Observable<Error>) -> Observable<Int> in
-                    self!.connectionStatus.onNext(.connecting)
                     return Observable<Int>.timer(1, period: nil, scheduler: MainScheduler.instance).flatMap({ elem -> Observable<Int> in
-                       // self!.connectionStatus.onNext(.connecting)
+                        self!.connectionStatus.onNext(.connecting)
                         return Observable<Int>.just(elem)
                     })
                 }

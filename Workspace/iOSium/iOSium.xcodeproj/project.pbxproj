@@ -26,6 +26,9 @@
 		E95EE139211DD6ED0022EAE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E95EE133211DD6ED0022EAE4 /* Assets.xcassets */; };
 		E95EE13A211DD6ED0022EAE4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E95EE134211DD6ED0022EAE4 /* MainMenu.xib */; };
 		E95EE13B211DD6ED0022EAE4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E95EE137211DD6ED0022EAE4 /* Info.plist */; };
+		E9BCF9642120E5D600180EA8 /* DeviceInteractionImageViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCF9632120E5D600180EA8 /* DeviceInteractionImageViewContainer.swift */; };
+		E9BCF9682121056400180EA8 /* WebDriverAgentScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCF9672121056400180EA8 /* WebDriverAgentScreenSize.swift */; };
+		E9BCF96A2121063000180EA8 /* DeviceInteractionScreenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCF9692121063000180EA8 /* DeviceInteractionScreenInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		E95EE135211DD6ED0022EAE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E95EE136211DD6ED0022EAE4 /* iOSium.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = iOSium.entitlements; sourceTree = "<group>"; };
 		E95EE137211DD6ED0022EAE4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9BCF9632120E5D600180EA8 /* DeviceInteractionImageViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInteractionImageViewContainer.swift; sourceTree = "<group>"; };
+		E9BCF9672121056400180EA8 /* WebDriverAgentScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDriverAgentScreenSize.swift; sourceTree = "<group>"; };
+		E9BCF9692121063000180EA8 /* DeviceInteractionScreenInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInteractionScreenInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 				E91A69DF211F21400002FEAA /* WebDriverAgentStatus.swift */,
 				E91A69EA211F5D150002FEAA /* ApplicationPreferences.swift */,
 				E91A69ED211F79D30002FEAA /* WebDriverAgentScreenshot.swift */,
+				E9BCF9672121056400180EA8 /* WebDriverAgentScreenSize.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -144,6 +151,8 @@
 				E91A69F1211F81780002FEAA /* DeviceInteractionWindowController.xib */,
 				E91A69F3211F82A40002FEAA /* DeviceInteractionWindowModel.swift */,
 				E91A69F5211F83850002FEAA /* DeviceInteractionActionManager.swift */,
+				E9BCF9632120E5D600180EA8 /* DeviceInteractionImageViewContainer.swift */,
+				E9BCF9692121063000180EA8 /* DeviceInteractionScreenInfo.swift */,
 			);
 			path = DeviceInteractionWindow;
 			sourceTree = "<group>";
@@ -326,11 +335,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E91A69DA211F1E040002FEAA /* WebDriverAgentServiceAdapter.swift in Sources */,
+				E9BCF9642120E5D600180EA8 /* DeviceInteractionImageViewContainer.swift in Sources */,
 				E91A69F6211F83850002FEAA /* DeviceInteractionActionManager.swift in Sources */,
+				E9BCF9682121056400180EA8 /* WebDriverAgentScreenSize.swift in Sources */,
 				E91A69D8211F19580002FEAA /* WebDriverAgentService.swift in Sources */,
 				E91A69EE211F79D30002FEAA /* WebDriverAgentScreenshot.swift in Sources */,
 				E95EE138211DD6ED0022EAE4 /* AppDelegate.swift in Sources */,
 				E91A69E2211F45AB0002FEAA /* DeviceConnectionWindowController.swift in Sources */,
+				E9BCF96A2121063000180EA8 /* DeviceInteractionScreenInfo.swift in Sources */,
 				E91A69DD211F1F350002FEAA /* RootServiceDomain.swift in Sources */,
 				E91A69EB211F5D150002FEAA /* ApplicationPreferences.swift in Sources */,
 				E91A69E0211F21400002FEAA /* WebDriverAgentStatus.swift in Sources */,

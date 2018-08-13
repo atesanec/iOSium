@@ -19,9 +19,26 @@ class DeviceInteractionActionManager {
     
     init(windowModel: DeviceInteractionWindowModel) {
         self.windowModel = windowModel
+        
+        self.setupObservations()
     }
     
-    func refreshScreenshot() {
-        self.requestAdapter.takeScreenshot().map {$0.image}.bind(to: self.windowModel.screenshotImage).disposed(by: self.disposeBag)
+    private func setupObservations() {
+        self.windowModel.refreshScreenshotSignal.flatMap { [weak self] _ -> Observable<DeviceInteractionScreenInfo> in
+            let strongSelf = self!
+            let adapter = strongSelf.requestAdapter
+            return Observable.combineLatest(adapter.takeScreenshot(), adapter.loadScreenLogicSize()) { imageInfo, sizeInfo in
+                return DeviceInteractionScreenInfo(image: imageInfo.image, logicSize: sizeInfo.logicSize)
+            }
+        }.bind(to: self.windowModel.deviceScreenInfo).disposed(by: disposeBag)
+        
+        self.windowModel.screenClickSignal.flatMap { [weak self] normalizedPoint -> Observable<Void> in
+            let strongSelf = self!
+            let screenInfo = try! strongSelf.windowModel.deviceScreenInfo.value()!
+            let logicSize = screenInfo.logicSize
+            let point = NSPoint(x: normalizedPoint.x * logicSize.width, y: (1 - normalizedPoint.y) * logicSize.height)
+            
+            return strongSelf.requestAdapter.sendScreenClick(point: point)
+        }.subscribe().disposed(by: self.disposeBag)
     }
 }
