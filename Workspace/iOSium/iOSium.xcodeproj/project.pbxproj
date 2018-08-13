@@ -29,6 +29,7 @@
 		E9BCF9642120E5D600180EA8 /* DeviceInteractionImageViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCF9632120E5D600180EA8 /* DeviceInteractionImageViewContainer.swift */; };
 		E9BCF9682121056400180EA8 /* WebDriverAgentScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCF9672121056400180EA8 /* WebDriverAgentScreenSize.swift */; };
 		E9BCF96A2121063000180EA8 /* DeviceInteractionScreenInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BCF9692121063000180EA8 /* DeviceInteractionScreenInfo.swift */; };
+		E9BCF97021210EDC00180EA8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9BCF97221210EDC00180EA8 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		E9BCF9632120E5D600180EA8 /* DeviceInteractionImageViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInteractionImageViewContainer.swift; sourceTree = "<group>"; };
 		E9BCF9672121056400180EA8 /* WebDriverAgentScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDriverAgentScreenSize.swift; sourceTree = "<group>"; };
 		E9BCF9692121063000180EA8 /* DeviceInteractionScreenInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInteractionScreenInfo.swift; sourceTree = "<group>"; };
+		E9BCF96F21210ED500180EA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainMenu.strings; sourceTree = "<group>"; };
+		E9BCF97121210EDC00180EA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +199,7 @@
 				E95EE134211DD6ED0022EAE4 /* MainMenu.xib */,
 				E95EE136211DD6ED0022EAE4 /* iOSium.entitlements */,
 				E95EE137211DD6ED0022EAE4 /* Info.plist */,
+				E9BCF97221210EDC00180EA8 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -243,7 +247,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = E95EE116211DD61F0022EAE4;
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95EE139211DD6ED0022EAE4 /* Assets.xcassets in Resources */,
+				E9BCF97021210EDC00180EA8 /* Localizable.strings in Resources */,
 				E95EE13A211DD6ED0022EAE4 /* MainMenu.xib in Resources */,
 				E95EE13B211DD6ED0022EAE4 /* Info.plist in Resources */,
 				E91A69F2211F81780002FEAA /* DeviceInteractionWindowController.xib in Resources */,
@@ -360,8 +364,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				E95EE135211DD6ED0022EAE4 /* Base */,
+				E9BCF96F21210ED500180EA8 /* en */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		E9BCF97221210EDC00180EA8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9BCF97121210EDC00180EA8 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
