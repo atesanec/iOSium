@@ -28,6 +28,7 @@ class DeviceInteractionImageViewContainer: NSView {
         }
     }
     
+    /// Emits click coordinates that are normalized in [0,1] interval
     let imageViewClick = PublishSubject<NSPoint>()
     
     required init?(coder decoder: NSCoder) {

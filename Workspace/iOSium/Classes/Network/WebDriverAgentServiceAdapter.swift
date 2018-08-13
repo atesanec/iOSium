@@ -37,12 +37,13 @@ class WebDriverAgentServiceAdapterError: Error {
  *  Service adapter to perform specific service requests
  */
 class WebDriverAgentServiceAdapter {
+    let mappingQueue = DispatchQueue(label: "com.WebDriverAgentServiceAdapterMappingQueue")
     
     func checkConnectionStatus() -> Observable<WebDriverAgentStatus> {
-        return Observable.create {(observer) -> Disposable in
+        return Observable.create { observer -> Disposable in
             let path = self.buildRequestURL(path: WebDriverAgentServicePaths.status.rawValue).absoluteString
             let task = Alamofire.request(path, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
-                .responseJSON { response in
+                .responseJSON(queue: self.mappingQueue) { response in
                     switch(response.result) {
                     case .success(_):
                         observer.onNext(WebDriverAgentStatus(responseJSON: response.result.value!))
@@ -63,10 +64,10 @@ class WebDriverAgentServiceAdapter {
     }
     
     func takeScreenshot() -> Observable<WebDriverAgentScreenshot> {
-        return Observable.create {(observer) -> Disposable in
+        return Observable.create { observer -> Disposable in
             let path = self.buildSessionRequestURL(path: WebDriverAgentServicePaths.screenshot.rawValue)
             let task = Alamofire.request(path, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
-                .responseJSON { response in
+                .responseJSON(queue: self.mappingQueue) { response in
                     switch(response.result) {
                     case .success(_):
                         observer.onNext(WebDriverAgentScreenshot(responseJSON: response.result.value!))
@@ -87,7 +88,7 @@ class WebDriverAgentServiceAdapter {
     }
     
     func sendScreenClick(point: NSPoint) -> Observable<Void> {
-        return Observable.create {(observer) -> Disposable in
+        return Observable.create { observer -> Disposable in
             let path = self.buildSessionRequestURL(path: WebDriverAgentServicePaths.screenClick.rawValue)
             let params = [
                 WebDriverAgentServiceParams.x.rawValue: point.x,
@@ -95,7 +96,7 @@ class WebDriverAgentServiceAdapter {
             ]
             
             let task = Alamofire.request(path, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil)
-                .responseJSON { response in
+                .responseJSON(queue: self.mappingQueue) { response in
                     switch(response.result) {
                     case .success(_):
                         observer.onNext(())
@@ -116,11 +117,11 @@ class WebDriverAgentServiceAdapter {
     }
     
     func loadScreenLogicSize() -> Observable<WebDriverAgentScreenSize> {
-        return Observable.create {(observer) -> Disposable in
+        return Observable.create { observer -> Disposable in
             let path = self.buildSessionRequestURL(path: WebDriverAgentServicePaths.screenLogicSize.rawValue)
             
             let task = Alamofire.request(path, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
-                .responseJSON { response in
+                .responseJSON(queue: self.mappingQueue) { response in
                     switch(response.result) {
                     case .success(_):
                         observer.onNext(WebDriverAgentScreenSize(responseJSON: response.result.value!))

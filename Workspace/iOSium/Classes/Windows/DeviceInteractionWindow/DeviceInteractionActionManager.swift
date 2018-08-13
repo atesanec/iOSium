@@ -30,7 +30,11 @@ class DeviceInteractionActionManager {
             return Observable.combineLatest(adapter.takeScreenshot(), adapter.loadScreenLogicSize()) { imageInfo, sizeInfo in
                 return DeviceInteractionScreenInfo(image: imageInfo.image, logicSize: sizeInfo.logicSize)
             }
-        }.bind(to: self.windowModel.deviceScreenInfo).disposed(by: disposeBag)
+            }.observeOn(MainScheduler.instance).subscribe(onNext: {[weak self] info in
+                self!.windowModel.deviceScreenInfo.onNext(info)
+                }, onError: { [weak self] (e) -> Void in
+                    self!.showErrorAlert()
+            }).disposed(by: self.disposeBag)
         
         self.windowModel.screenClickSignal.flatMap { [weak self] normalizedPoint -> Observable<Void> in
             let strongSelf = self!
@@ -39,6 +43,15 @@ class DeviceInteractionActionManager {
             let point = NSPoint(x: normalizedPoint.x * logicSize.width, y: (1 - normalizedPoint.y) * logicSize.height)
             
             return strongSelf.requestAdapter.sendScreenClick(point: point)
-        }.subscribe().disposed(by: self.disposeBag)
+            }.subscribe(onError: { [weak self] (e) -> Void in
+                self!.showErrorAlert()
+            }).disposed(by: self.disposeBag)
+    }
+    
+    private func showErrorAlert() {
+        let alert = NSAlert()
+        alert.messageText = "UnableToCompleteRequest".localized
+        alert.addButton(withTitle: "OK".localized)
+        alert.runModal()
     }
 }

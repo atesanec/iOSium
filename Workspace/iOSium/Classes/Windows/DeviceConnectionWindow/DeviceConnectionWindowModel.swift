@@ -12,6 +12,6 @@ import RxSwift
 /**
  *  Model for device connection window
  */
-class DeviceConnectionWindowModel {    
+class DeviceConnectionWindowModel {
     let webDriverAgentURL = BehaviorSubject<URL?>(value: nil)
 }

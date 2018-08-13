@@ -6,4 +6,16 @@
   Copyright © 2018 Test. All rights reserved.
 */
 
-"WebAgentServiceStartPrompt" = "Start WebDriverAgent on your device first";
+"WebAgentServiceStartPrompt" = "Start WebDriverAgent on your device first.\r\nThen enter the provided address below";
+"ConnectedState" = "Connected";
+"ConnectingState" = "Connecting...";
+"DisconnectedState" = "Disconnected";
+"IPAddressPlaceholder" = "http://device.ip.address:port";
+"StopService" = "Stop";
+"StartService" = "Start";
+"DeviceConnectionTitle" = "Device Connection Settings";
+
+"DeviceScreen" = "Device Screen";
+"UnableToCompleteRequest" = "Unable to complete request";
+
+"OK" = "OK";

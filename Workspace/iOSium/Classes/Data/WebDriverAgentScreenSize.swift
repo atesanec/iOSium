@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ *  Response for Web Driver Agent sereen size resuest
+ */
 struct WebDriverAgentScreenSize {
     let logicSize: NSSize
     

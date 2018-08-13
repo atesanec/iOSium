@@ -32,6 +32,8 @@ class DeviceConnectionWindowController: NSWindowController {
     }
     
     override func windowDidLoad() {
+        self.window!.title = self.window!.title.localized
+        
         hintLabel.stringValue = hintLabel.stringValue.localized
         hintLabel.placeholderString = hintLabel.placeholderString?.localized
         
@@ -72,11 +74,9 @@ class DeviceConnectionWindowController: NSWindowController {
     
     private func setupModelObservations() {
         self.windowModel.webDriverAgentURL.subscribe(onNext: { [weak self] url in
-            let isValidURL = url != nil && url!.host != nil
-            if !isValidURL {
-                RootServiceDomain.sharedDomain.webDriverAgentService.stop()
-            }
+            RootServiceDomain.sharedDomain.webDriverAgentService.stop()
             
+            let isValidURL = url != nil && url!.host != nil
             self!.startButton.isEnabled = isValidURL
         }).disposed(by: self.disposeBag)
         

@@ -9,6 +9,9 @@
 import Foundation
 import AppKit
 
+/**
+ *  Response for Web Driver Agent screenshot resuest
+ */
 struct WebDriverAgentScreenshot {
     let image: NSImage
     

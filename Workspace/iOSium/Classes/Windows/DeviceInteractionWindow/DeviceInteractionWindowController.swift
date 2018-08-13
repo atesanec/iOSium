@@ -11,6 +11,9 @@ import AppKit
 import RxCocoa
 import RxSwift
 
+/**
+ *  Window that displays the screenshot of device and handles user's clicks
+ */
 class DeviceInteractionWindowController: NSWindowController {
     @IBOutlet weak var imageViewContainer: DeviceInteractionImageViewContainer!
     
@@ -28,6 +31,8 @@ class DeviceInteractionWindowController: NSWindowController {
     }
     
     override func windowDidLoad() {
+        self.window!.title = self.window!.title.localized
+        
         self.actionManager = DeviceInteractionActionManager(windowModel: self.windowModel)
         self.setupModelObservations()
         self.setupUIObservations()

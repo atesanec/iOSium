@@ -50,15 +50,16 @@ class WebDriverAgentService {
         ApplicationPreferences.serviceURL = url
         
         let interval: Double? = 5.0
+        // Setup polling for connection status check
         Observable<Int>.timer(0.0, period: interval, scheduler: MainScheduler.instance)
             .flatMapLatest { [weak self] _ in
-                self!.requestAdapter.checkConnectionStatus().retryWhen {[weak self] (o : Observable<Error>) -> Observable<Int> in
+                self!.requestAdapter.checkConnectionStatus().retryWhen { [weak self] (o : Observable<Error>) -> Observable<Int> in
                     return Observable<Int>.timer(1, period: nil, scheduler: MainScheduler.instance).flatMap({ elem -> Observable<Int> in
                         self!.connectionStatus.onNext(.connecting)
                         return Observable<Int>.just(elem)
                     })
                 }
-        }.subscribe(onNext: { [weak self] status in
+        }.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] status in
             self!.connectionStatus.onNext(.connected)
             self!.sessionId = status.defaultSessionId
         }).disposed(by: self.disposeBag)

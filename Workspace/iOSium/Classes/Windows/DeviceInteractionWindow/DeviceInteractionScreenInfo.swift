@@ -9,7 +9,12 @@
 import Foundation
 import AppKit
 
+/**
+ * Information that is used for rendering and processing clicks on device interaction screen
+ */
 struct DeviceInteractionScreenInfo {
+    /// Screenshot
     let image: NSImage
+    /// Screen size in device points
     let logicSize: NSSize
 }
